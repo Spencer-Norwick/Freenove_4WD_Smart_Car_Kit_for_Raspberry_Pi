@@ -336,10 +336,16 @@ class mywindow(QMainWindow, Ui_Client):
                 self.on_btn_Turn_Right()
                 self.Key_D = True
             elif event.key() == Qt.Key_A:
-                self.on_btn_Moveleft()
+                if self.Wheel_Flag:
+                    self.on_btn_Moveleft()
+                else:
+                    self.on_btn_Turn_Left()
                 self.Key_A = True
             elif event.key() == Qt.Key_D:
-                self.on_btn_Moveright()
+                if self.Wheel_Flag:
+                    self.on_btn_Moveright()
+                else:
+                    self.on_btn_Turn_Right()
                 self.Key_D = True
 
             elif event.key() == Qt.Key_Q:
